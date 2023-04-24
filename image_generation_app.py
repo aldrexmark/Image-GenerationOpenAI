@@ -15,7 +15,9 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.__version__ = "0.10.2"
 
 #HEADER
-st.write('Image Generation Through Text Description Using OpenAI')
+st.title('Image Generation Through Text Description Using OpenAI')
+st.sidebar.header("Description")
+st.sidebar.info("This WebApp uses OpenAI to generate images through texts.") 
 
 #MAIN FUNCTION
 def generate_image(prompt):
