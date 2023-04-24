@@ -25,13 +25,16 @@ def generate_image(prompt):
       "model": model,
       "prompt": prompt,
       "num_images": 1,
-      "size": "256x256",
+      "size": "512x512",
   }
   headers = CaseInsensitiveDict()
   headers["Content-Type"] = "application/json"
   headers["Authorization"] = f"Bearer {openai.api_key}"
   
   resp = requests.post("https://api.openai.com/v1/images/generations", headers=headers, data=json.dumps(data))
+
+  print(f"Response status code: {resp.status_code}")
+  print(f"Response text: {resp.text}")
 
   if resp.status_code != 200:
     raise ValueError("Failed to generate image")
