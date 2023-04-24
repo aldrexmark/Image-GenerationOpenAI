@@ -25,7 +25,7 @@ def generate_image(prompt):
       "model": model,
       "prompt": prompt,
       "num_images": 1,
-      "size": "512x512",
+      "size": "256x256",
   }
   headers = CaseInsensitiveDict()
   headers["Content-Type"] = "application/json"
