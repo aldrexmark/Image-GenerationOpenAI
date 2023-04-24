@@ -9,6 +9,9 @@ import requests
 from requests.structures import CaseInsensitiveDict
 import streamlit as st
 
+#API KEY
+%env OPENAI_API_KEY=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
+
 #HEADER
 st.write('Image Generation Through Text Description Using OpenAI')
 openai.api_key = os.getenv("OPENAI_API_KEY")
