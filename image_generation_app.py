@@ -10,7 +10,7 @@ from requests.structures import CaseInsensitiveDict
 import streamlit as st
 
 #API KEY
-openai.api_key = "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"
+openai.api_key = "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"
 openai.__version__ = "0.10.2"
 
 #HEADER
@@ -32,9 +32,6 @@ def generate_image(prompt):
   headers["Authorization"] = f"Bearer {openai.api_key}"
   
   resp = requests.post("https://api.openai.com/v1/images/generations", headers=headers, data=json.dumps(data))
-
-  print(f"Response status code: {resp.status_code}")
-  print(f"Response text: {resp.text}")
 
   if resp.status_code != 200:
     raise ValueError("Failed to generate image")
