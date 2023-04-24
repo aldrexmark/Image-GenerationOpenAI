@@ -1,5 +1,3 @@
-!pip install openai
-
 #IMPORTS
 import openai
 import json
