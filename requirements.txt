@@ -1,1 +1,2 @@
 openai==0.10.2
+IPython==7.23.1
