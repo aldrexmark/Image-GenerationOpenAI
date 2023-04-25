@@ -33,9 +33,6 @@ def generate_image(prompt):
   
   resp = requests.post("https://api.openai.com/v1/images/generations", headers=headers, data=json.dumps(data))
 
-  if resp.status_code != 200:
-    raise ValueError("Failed to generate image")
-
   response_text = json.loads(resp.text)
   image_url = response_text['data'][0]['url']
   image_data = requests.get(image_url).content
