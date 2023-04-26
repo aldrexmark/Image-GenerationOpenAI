@@ -10,7 +10,8 @@ from requests.structures import CaseInsensitiveDict
 import streamlit as st
 
 #API KEY
-openai.api_key = "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"
+OPENAI_API_KEY = "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"
+openai_api_key = os.getenv('OPENAI_API_KEY')
 openai.__version__ = "0.10.2"
 
 #HEADER
