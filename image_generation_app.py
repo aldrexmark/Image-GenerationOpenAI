@@ -1,4 +1,4 @@
-# IMPORTS
+#IMPORTS
 import openai
 import json
 import os
@@ -9,16 +9,20 @@ import requests
 from requests.structures import CaseInsensitiveDict
 import streamlit as st
 
-# API KEY
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+# Load API key from Streamlit secrets
+try:
+    openai.api_key = st.secrets["OPENAI_API_KEY"]
+except KeyError:
+    st.error("API key is not set. Please set the API key in the Streamlit secrets.")
+
 openai.__version__ = "0.10.2"
 
-# HEADER
+#HEADER
 st.title('Image Generation Through Text Description Using OpenAI')
 st.sidebar.header("Description")
 st.sidebar.info("This WebApp uses OpenAI to generate images through texts.") 
 
-# MAIN FUNCTION
+#MAIN FUNCTION
 def generate_image(prompt):
   model = "image-alpha-001"
   data = {
@@ -55,4 +59,4 @@ if prompt:
   generated_image = generate_image(prompt)
 
   # Display the image
-  st.image(generated_image, caption="Generated Image", format='jpg')
+  st.image(generated_image, caption="Generated Image", format='jpg') 
