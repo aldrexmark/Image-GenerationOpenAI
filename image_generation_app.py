@@ -54,4 +54,4 @@ if prompt:
   generated_image = generate_image(prompt)
 
   # Display the image
-  st.image(generated_image, caption="Generated Image", format='JPEG') 
+  st.image(generated_image, caption="Generated Image", format='jpg') 
