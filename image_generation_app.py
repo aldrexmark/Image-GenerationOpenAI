@@ -15,6 +15,7 @@ try:
 except KeyError:
     st.error("API key is not set. Please set the API key in the Streamlit secrets.")
 
+
 openai.__version__ = "0.10.2"
 
 #HEADER
