@@ -9,12 +9,8 @@ import requests
 from requests.structures import CaseInsensitiveDict
 import streamlit as st
 
-# Load API key from Streamlit secrets
-try:
-    openai.api_key = st.secrets["OPENAI_API_KEY"]
-except KeyError:
-    st.error("API key is not set. Please set the API key in the Streamlit secrets.")
-
+# Access the API key from the environment variable
+api_key = os.getenv("API_KEY")
 
 openai.__version__ = "0.10.2"
 
